@@ -13,6 +13,9 @@ ViewData["Title"] = "Home Page";
         border-bottom: 1px solid #ddd;
         border-top: 1px solid #ddd;
     }
+    h1 {
+        color: rgb(45, 136, 139);
+    }
 </style>
 
 <div class="text-center">
@@ -20,7 +23,7 @@ ViewData["Title"] = "Home Page";
 
     @if (@User.Identity is not null && @User.Identity.IsAuthenticated)
     {
-        <p>You are signed in! Below are the claims in your ID token. </p>
+        <h4>You are signed in! Below are the claims in your ID token. </h4>
         <table>
             <tbody>
 
