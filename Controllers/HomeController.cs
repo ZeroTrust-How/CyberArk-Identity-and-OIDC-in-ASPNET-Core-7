@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using identity_oidc.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace identity_oidc.Controllers;
 
@@ -18,7 +19,19 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Privacy()
+    [Authorize(Roles="SecurityAdmins,SuperAdmins")]
+    public IActionResult Security()
+    {
+        return View();
+    }
+
+    [Authorize(Roles="SuperAdmins")]
+    public IActionResult Administration()
+    {
+        return View();
+    }
+
+    public IActionResult AccessDenied()
     {
         return View();
     }

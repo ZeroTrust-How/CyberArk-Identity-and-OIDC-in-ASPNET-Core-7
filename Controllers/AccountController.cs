@@ -23,5 +23,10 @@ namespace identity_temp.Controllers
                 CookieAuthenticationDefaults.AuthenticationScheme
              });
         }
+
+        public IActionResult AccessDenied()
+        {
+            return RedirectToAction("AccessDenied", "Home");
+        }
     }
 }
